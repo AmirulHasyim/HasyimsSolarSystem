@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('images/stars2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #3e2e2e;
+    overflow: hidden;
+}
+
+.container {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+
+.sun {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.earth, .moon, .ship {
+    position: absolute;
+    border-radius: 50%;
+    transform-origin: 50% 50%;
+    animation: orbit linear infinite;
+    will-change: transform;
+}
+
+.earth {
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    border: 0.1em dashed rgba(255, 255, 255, 0.5); /* Orbit path */
+    animation-duration: 36.5s;
+}
+
+.earth::before {
+    content: '';
+    position: absolute;
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background-color: aqua;
+    border-radius: 50%;
+}
+
+.moon {
+    top: 0;
+    right: 0;
+    width: 8em;
+    height: 8em;
+    border: 0.05em dotted rgba(255, 255, 255, 0.5); /* Orbit path */
+    animation-duration: 2.7s;
+}
+
+.moon::before {
+    content: '';
+    position: absolute;
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: silver;
+    border-radius: 50%;
+}
+
+.ship {
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    border: 0.1em solid rgba(255, 255, 255, 0.5); /* Orbit path */
+    animation-duration: 37.5s;
+}
+
+.ship::before {
+    content: '';
+    position: absolute;
+    top: 0.15em;
+    right: 0.10em;
+    width: 2em;
+    height: 1.2em;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 0 0 1em rgba(255, 165, 0, 0.8);
+}
